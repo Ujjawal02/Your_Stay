@@ -1,6 +1,6 @@
-.classRoom
-.learn_Middleware
-.node_modules
+.classRoom/
+.learn_Middleware/
+.node_modules/
 .app.js
 .app1.js
 .app2.js
@@ -11,3 +11,5 @@
 .app7.js
 .app8.js
 .app9.js
+.app11.js
+.env
