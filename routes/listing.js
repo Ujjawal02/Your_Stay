@@ -15,14 +15,15 @@ const upload = multer({ storage });
 router
     .route("/")
     .get(wrapAsync(listingController.index))
-    // .post( 
-    // isLoggedIn,
-    // validateListing,
-    // wrapAsync(listingController.createListing)
-    // );
-    .post(upload.single('listing[image]'), (req, res) =>{
-        res.send(req.file);
-    })
+    .post( 
+    isLoggedIn,
+    upload.single('listing[image]'),
+    validateListing,
+    wrapAsync(listingController.createListing)
+    );
+    // .post(upload.single('listing[image]'), (req, res) =>{
+    //     res.send(req.file);//req.file ke andr hi link hai image ka Aur isi link ko mongobd ke database ke andr store krana hai
+    // })
 
 //New form Route
 router.get("/new",
@@ -37,6 +38,7 @@ router
     .put(
     isLoggedIn,
     isOwner,
+    upload.single('listing[image]'),
     validateListing,
     wrapAsync(listingController.updateListing))
     .delete( 
