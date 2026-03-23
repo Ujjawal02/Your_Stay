@@ -1,15 +1,9 @@
-if(process.env.NODE_ENV != "production"){
-    require('dotenv').config();
-}
-// console.log(process.env.SECRET);
 // Authentication using passport 
 const express = require('express');
 const app = express();
 const mongoose = require("mongoose");
 const port = 3000;
 const MONGO_URL = "mongodb://127.0.0.1:27017/airbnb";
-
-// const dbUrl = process.env.ATLASDB_URL;
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
@@ -37,7 +31,6 @@ main()
 //connect to database
 async function main() {
     await mongoose.connect(MONGO_URL);
-    // await mongoose.connect(dbUrl);
 }
 
 
@@ -60,9 +53,9 @@ const sessionOptions = {
     }
 };
 
-// app.get("/",(req, res) =>{
-//     res.send(".......Root Call......")
-// });
+app.get("/",(req, res) =>{
+    res.send(".......Root Call......")
+});
 
 app.use(session(sessionOptions));
 app.use(flash());
