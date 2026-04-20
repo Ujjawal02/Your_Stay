@@ -1,22 +1,14 @@
-if(process.env.NODE_ENV != "production"){
-    require('dotenv').config();
-}
-// console.log(process.env.SECRET);
 // Authentication using passport 
 const express = require('express');
 const app = express();
 const mongoose = require("mongoose");
 const port = 3000;
-// const MONGO_URL = "mongodb://127.0.0.1:27017/airbnb";
-
-const dbUrl = process.env.ATLASDB_URL;
+const MONGO_URL = "mongodb://127.0.0.1:27017/airbnb";
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
-//Now using connect session
-const MongoStore = require('connect-mongo').default;
 const flash = require("connect-flash");
 
 const passport = require("passport");
@@ -38,8 +30,7 @@ main()
 
 //connect to database
 async function main() {
-    // await mongoose.connect(MONGO_URL);
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(MONGO_URL);
 }
 
 
@@ -51,21 +42,8 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-const store = new MongoStore({
-    mongoUrl: dbUrl,
-    crypto:{
-        secret: "mysupersecretcode",
-    },
-    touchAfter: 24 * 3600,
-})
-
-store.on("error", (err) =>{
-    console.log("Error in MONGO Session Store", err);
-})
-
 const sessionOptions = {
-    store,
-    secret: "mysupersecretcode",
+    secret: "musupersecretcode",
     resave: false,
     saveUninitialized: true,
     cookie:{
@@ -75,9 +53,12 @@ const sessionOptions = {
     }
 };
 
-// app.get("/",(req, res) =>{
-//     res.send(".......Root Call......")
-// });
+
+
+
+app.get("/",(req, res) =>{
+    res.send(".......Root Call......")
+});
 
 app.use(session(sessionOptions));
 app.use(flash());

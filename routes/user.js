@@ -3,7 +3,7 @@ const router = express.Router({mergeParams: true});
 const User = require("../models/user.js");
 const wrapAsync = require("../utils/wrapAsync");
 const passport = require("passport");
-const { saveRedirectUrl } = require("../middleware.js");
+const { saveRedirectUrl, isLoggedIn } = require("../middleware.js");
 const userController = require("../controllers/user.js");
 
 
@@ -20,6 +20,7 @@ router.post("/login",
         failureFlash: true
     }), userController.userLogin
 );
+
 
 router.get("/logout", userController.userLogout);
 
