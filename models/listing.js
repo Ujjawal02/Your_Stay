@@ -7,7 +7,7 @@ const User = require("./user");
 const listingSchema = new Schema({
     title:{
         type:String,
-        require:true,
+        required: true,
     },
     description:{
         type:String,
@@ -48,6 +48,22 @@ const listingSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User",
      },  
+     category:{
+        type: String,
+        enum: [
+        "Trending",
+        "Room",
+        "Iconic Cities",
+        "Mountains",
+        "Castles",
+        "Amazing Pools",
+        "Camping",
+        "Farms",
+        "Arctic",
+        "Domes",
+        "Boats"
+      ],
+     }
 });
 
 listingSchema.post("findOneAndDelete", async(listing) =>{

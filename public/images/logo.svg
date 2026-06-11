@@ -1,0 +1,15 @@
+<svg width="52" height="52" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Soft Background -->
+  <rect x="5" y="5" width="90" height="90" rx="24" fill="#fff2f2"></rect>
+
+  <!-- Home Shape -->
+  <path d="M30 50 L50 30 L70 50 V70 H30 Z" fill="#ff5a5f"></path>
+
+  <!-- Door (Y shape hint) -->
+  <path d="M50 52 V70 M50 52 L43 45 M50 52 L57 45" stroke="white" stroke-width="3" stroke-linecap="round"></path>
+
+  <!-- Subtle Border -->
+  <rect x="5" y="5" width="90" height="90" rx="24" stroke="#ff5a5f" stroke-width="2" fill="none"></rect>
+
+</svg>

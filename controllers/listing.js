@@ -2,10 +2,49 @@ const Listing = require("../models/listing.js");
 
 module.exports.index = async (req, res) =>{
     const allListings = await Listing.find({});
-    res.render("listings/index.ejs", {allListings});
+    res.render("listings/index.ejs", {allListings, category: req.query.category || "",
+        successMsg: null,
+        errorMsg: null
+    });
 }
 module.exports.renderNewFrom = async (req, res) =>{
     res.render("listings/new.ejs");
+}
+
+module.exports.search = async (req, res)=>{
+    const {destination, category} = req.query;
+    console.log("Query:", req.query);
+    console.log("Category:", category);
+    let filter = {};
+
+    if(destination){
+        filter.$or = [
+            {location: {$regex: destination, $options: "i"}},
+            {country: {$regex: destination, $options: "i"}}
+        ]
+    }
+
+    if(category){
+        filter.category = category
+    }
+
+    let allListings = await Listing.find(filter)
+
+    if(allListings.length === 0){
+        return res.render("listings/index.ejs", {
+            allListings: await Listing.find({}),
+            category,
+            successMsg: null,
+            errorMsg: "No listings found."
+        });
+    }
+
+    res.render("listings/index.ejs", {
+        allListings,
+        category,
+        successMsg: `Listings found in ${category} category.`,
+        errorMsg: null
+    });
 }
 
 module.exports.showListing = async (req, res) =>{
@@ -80,3 +119,4 @@ module.exports.distroyListing = async (req, res) =>{
     req.flash("success", "Listing Deleted!");
     res.redirect(`/listings`);
 }
+

@@ -14,9 +14,15 @@ body{
     background-color: white;
 }
 /* Icon */
-.fa-compass{
+/* .fa-compass{
     color: #f2424d;
     font-size: 2rem;
+} */
+
+ .navbar-brand img {
+  margin-left: 5px;  
+  width: 40px;
+  height: auto;
 }
 
 /*Options  */
@@ -87,6 +93,7 @@ body{
     background-color: #f2424d !important;
     color: white !important;
     border: none !important;
+    width: 20%;
 }
 
 /* Show Page */
@@ -122,6 +129,27 @@ body{
     cursor: pointer;
 }
 
+/* Anchor tags */
+.filter a{
+    text-decoration: none;
+    color: #333;
+}
+/* Active Filter */
+.active-filter {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.active-filter i,
+.active-filter p {
+    color: black;
+}
+
+.active-filter {
+    border-bottom: 2px solid black;
+} 
+
+
 /* tax-toggle */
 .tax-toggle{
     margin-left: auto;
@@ -156,7 +184,7 @@ body{
     margin-top: 0.2rem;
     height: 2rem !important;
     width: 20rem !important;
-    border-radius: 0.8rem !important;
+    border-radius: 0.5rem !important;
     font-size: 0.8rem;
 }
 /* search button */
@@ -213,3 +241,29 @@ body{
         font-size: 12px;
     }
 }
+/* Search Bar Select Category */
+select.form-select option {
+  font-size: 14px;       /* uniform text size */
+  font-family: Arial, sans-serif; /* consistent font */
+  padding: 8px;          /* spacing inside options */
+  background-color: #f8f9fa; /* light background */
+  color: #333;           /* text color */
+}
+
+select.form-select option:hover {
+  background-color: #e9ecef; /* hover effect */
+}
+
+.new-Listing-Category {
+  height: calc(2.375rem + 2px); /* same as .form-control default */
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  padding: 0.375rem 0.75rem;    /* same padding as input */
+  background-color: #f8f9fa;
+  color: #333;
+  border-radius: 5px;
+}
+
+
+
+

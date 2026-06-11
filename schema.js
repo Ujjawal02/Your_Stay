@@ -10,7 +10,8 @@ const listingSchema = Joi.object({
         image: Joi.object({
         filename: Joi.string().allow("", null),
         url: Joi.string().uri().allow("", null)
-        }).optional()
+        }).optional(),
+        category: Joi.string().required()
     }).required()
 })
 

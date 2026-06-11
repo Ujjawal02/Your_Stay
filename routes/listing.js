@@ -31,6 +31,7 @@ router.get("/new",
     wrapAsync(listingController.renderNewFrom)
 );
 
+router.get('/search', wrapAsync(listingController.search))
 
 router
     .route("/:id")
@@ -54,6 +55,7 @@ router.get("/:id/edit",
     isOwner,
     wrapAsync(listingController.renderEditFrom)
 ); 
+
 
 module.exports = router;
 

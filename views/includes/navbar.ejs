@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+        <!-- <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a> -->
+        <a class="navbar-brand" href="/listings"><img src="/images/logo.svg"/></a>
+
         <button class="navbar-toggler" 
         type="button" 
         data-bs-toggle="collapse" 
@@ -12,8 +14,22 @@
                 <a class="nav-link" href="/listings">Your_Stay</a>
             </div>
             <div class="navbar-nav search-box ms-auto">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2 input-search" type="search" placeholder="Search Your Destination" aria-label="Search"/>
+                <form class="d-flex" role="search" action="/listings/search" method="GET">
+                    <input class="form-control me-2 input-search" type="search" name="destination" placeholder="Search Your Destination" aria-label="Search"/>
+                    <select name="category" class="form-select w-25 me-2">
+                        <option value="">All Categories</option>
+                        <option value="Trending">Trending</option>
+                        <option value="Room">Room</option>
+                        <option value="Iconic Cities">Iconic Cities</option>
+                        <option value="Mountains">Mountains</option>
+                        <option value="Castles">Castles</option>
+                        <option value="Amazing Pools">Amazing Pools</option>
+                        <option value="Camping">Camping</option>
+                        <option value="Farms">Farms</option>
+                        <option value="Arctic">Arctic</option>
+                        <option value="Domes">Domes</option>
+                        <option value="Boats">Boats</option>
+                    </select>
                     <button class="btn btn-search" type="submit"><div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i> &nbsp;&nbsp;&nbsp;Search</div></button>
                 </form>
             </div>
