@@ -353,3 +353,7 @@ footer .col {
     margin-bottom: 1rem;
 }
 
+
+.login-container, .signup-container, .new-container{
+min-height: calc(100vh - 5rem)
+}

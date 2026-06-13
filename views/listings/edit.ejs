@@ -46,12 +46,33 @@
                     </div>
                 </div>
                 
-                <div class="mb-3">
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
                     <label for="country" class="form-label">Country</label>
-                    <input type="text" name="listing[country]" placeholder="enter country" class="form-control" value="<%=listing.country%>" required>
-                    <div class="valid-feedback">Looks Good!</div>
+                    <input type="text" name="listing[country]" placeholder="enter country" class="form-control" required>
                     <div class="invalid-feedback">Please enter a valid country name</div>
                 </div>
+                <div class="mb-3 col-md-8">
+                    <label for="country" class="form-label">Choice Category</label>
+                    <select name="listing[category]" class="form-select new-Listing-Category">
+                        <option value="">All Categories</option>
+                        <option value="Trending">Trending</option>
+                        <option value="Room">Room</option>
+                        <option value="Iconic Cities">Iconic Cities</option>
+                        <option value="Mountains">Mountains</option>
+                        <option value="Castles">Castles</option>
+                        <option value="Amazing Pools">Amazing Pools</option>
+                        <option value="Camping">Camping</option>
+                        <option value="Farms">Farms</option>
+                        <option value="Arctic">Arctic</option>
+                        <option value="Domes">Domes</option>
+                        <option value="Boats">Boats</option>
+                    </select>
+                </div>
+                </div>
+
+
                 <button class="btn btn-new">Edit</button>
                 <br><br>
             </form>
