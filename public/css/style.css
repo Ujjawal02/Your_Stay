@@ -268,5 +268,86 @@ select.form-select option:hover {
 
 
 
+footer {
+    background-color: #f7f7f7; /* light grey background */
+    padding: 2rem 3rem;
+    border-top: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
 
+/* Heading */
+footer h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Top navigation links (Popular, Arts & culture, etc.) */
+footer .row .col a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer .row .col a:hover {
+    color: #f2424d; /* Airbnb red hover */
+    text-decoration: underline;
+}
+
+/* City + rentals grid */
+footer .div {
+    margin-bottom: 1rem;
+}
+
+footer .div p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+footer .div span {
+    color: #777;
+    font-size: 0.85rem;
+}
+
+/* Support / Hosting / Airbnb lists */
+footer ul {
+    list-style-type: none; /* remove dots */
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+footer ul li:hover {
+    color: #f2424d; /* hover effect */
+    cursor: pointer;
+}
+
+/* Section titles */
+footer .col p {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+/* Responsive grid */
+footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+footer .col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 1rem;
+}
 
