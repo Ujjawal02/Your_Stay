@@ -112,59 +112,110 @@ body{
     width: 60vw;
 }
 
-/* Filters */
-#filters{
-    margin-top: 1rem;
+/* Filters Wrapper */
+#filters-wrapper {
     display: flex;
-    flex-wrap: wrap;
-}
-.filter{
-    text-align: center;
-    margin-right: 1.5rem;
-    opacity: 0.7;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+    gap: 1rem;
+    flex-wrap: nowrap;
 }
 
-.filter:hover{
+/* Filters Container */
+#filters {
+    flex: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#filters::-webkit-scrollbar {
+    display: none;
+}
+
+/* Single Filter */
+.filter {
+    text-align: center;
+    margin-right: 1rem;
+    opacity: 0.7;
+    min-width: 90px;
+    flex-shrink: 0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.filter:hover {
     opacity: 1;
     cursor: pointer;
+    background: #f0f0f0;
+    transform: scale(1.05);
 }
 
-/* Anchor tags */
-.filter a{
+/* Anchor Tags */
+.filter a {
     text-decoration: none;
     color: #333;
+    font-size: 14px;
+    font-weight: 500;
 }
+
+.filter i {
+    font-size: 1.2rem;
+}
+
 /* Active Filter */
 .active-filter {
     opacity: 1;
     font-weight: 700;
+    background: linear-gradient(135deg, #f2424d, #ff8177);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .active-filter i,
-.active-filter p {
-    color: black;
+.active-filter p,
+.active-filter a {
+    color: white;
 }
 
-.active-filter {
-    border-bottom: 2px solid black;
-} 
-
-
-/* tax-toggle */
-.tax-toggle{
-    margin-left: auto;
-    height: 3rem;
+/* Tax Toggle */
+.tax-toggle {
     width: 15rem;
-    margin-top: 0.2rem;
-    border: 0.1rem solid #222222;
+    min-width: 15rem;
+    height: 3rem;
+    border: 0.1rem solid #333;
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
-/* Gst hidden 2 option -> 1 visibilty hidden(Means hidden but take place) or display none(hidden and also not occupy that space) */
-.tax-info{
+
+/* GST Hidden */
+.tax-info {
     display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #filters-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #filters {
+        width: 100%;
+    }
+
+    .tax-toggle {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
 }
 
 /* Search bar */
@@ -177,6 +228,7 @@ body{
     display: flex;
     align-items: center;
 }
+
 /* .search-icon{
     display: flex;
 } */
@@ -190,57 +242,7 @@ body{
 /* search button */
 /* .btn-search{
 
-} */
 
-
-/* filter */
-#filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    align-items: center;
-}
-
-.filter {
-    text-align: center;
-    cursor: pointer;
-}
-
-.filter i {
-    font-size: 16px;
-}
-
-.tax-toggle {
-    margin-left: auto;
-}
-
-@media (max-width: 768px) {
-    #filters {
-        overflow-x: auto;   /* horizontal scroll */
-        flex-wrap: nowrap;  /* prevent wrapping */
-        gap: 15px;
-        padding: 10px;
-    }
-
-    .filter {
-        min-width: 80px;   /* fixed width so scroll works */
-        flex-shrink: 0;
-    }
-
-    .tax-toggle {
-        display: none;  /* hide toggle on small screen (optional) */
-    }
-}
-
-@media (max-width: 480px) {
-    .filter i {
-        font-size: 16px;
-    }
-
-    .filter p {
-        font-size: 12px;
-    }
-}
 /* Search Bar Select Category */
 select.form-select option {
   font-size: 14px;       /* uniform text size */
@@ -263,6 +265,7 @@ select.form-select option:hover {
   color: #333;
   border-radius: 5px;
 }
+
 
 
 
