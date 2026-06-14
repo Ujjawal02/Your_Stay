@@ -46,7 +46,7 @@ module.exports.userLogout = (req, res, next) =>{
         if(err){
             next(err);
         }
-        req.flash("success", "you are logged oyt now");
+        req.flash("success", "you are logged out now");
         res.redirect("/listings");
     });
 }

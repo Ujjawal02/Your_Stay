@@ -8,38 +8,38 @@
             <h3>Edit Listing</h3>
             <form action="/listings/<%=listing._id%>?_method=PUT" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
+                    <label for="title" class="form-label"><i class="fas fa-crown"></i> Title</label>
                     <input type="text" name="listing[title]" placeholder="enter title" class="form-control" value="<%=listing.title%>" required>
                     <div class="valid-feedback">Looks Good!</div>
                     <div class="invalid-feedback">Please enter a valid title</div>
                 </div>
                 
                 <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
+                    <label for="description" class="form-label"><i class="fas fa-align-left"></i> Description</label>
                     <textarea name="listing[description]" placeholder="enter description" class="form-control" required><%=listing.description%></textarea>
                     <div class="valid-feedback">Looks Good!</div>
                     <div class="invalid-feedback">Please enter a valid description</div>
                 </div>
 
                 <div class="mb-3">
-                    <img src="<%=originalImageUrl%>" alt="listing_image">
+                    <img src="<%=originalImageUrl%>" alt="listing_image" style="height: 20rem; width: 25rem;">
                 </div>
 
                 <div class="mb-3">
-                    <label for="image" class="form-label">Upload New Image</label>
+                    <label for="image" class="form-label"><i class="fas fa-image"></i> Upload New Image</label>
                     <input type="file" name="listing[image]" placeholder="upload image" class="form-control">
                     <div class="valid-feedback">Looks Good!</div>
                     <div class="invalid-feedback">Please enter a valid url/link</div>
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
-                        <label for="price" class="form=label">Price</label>
+                        <label for="price" class="form=label"><i class="fa-solid fa-tag"></i> Price</label>
                         <input type="number" name="listing[price]" placeholder="enter price" class="form-control" value="<%=listing.price%>" required>
                         <div class="valid-feedback">Looks Good!</div>
                         <div class="invalid-feedback">Please enter a valid price</div>
                     </div>
                     <div class="mb-3 col-md-8">
-                        <label for="location" class="form-label">Location</label>
+                        <label for="location" class="form-label"><i class="fa-solid fa-location-dot"></i> Venue</label>
                         <input type="text" name="listing[location]" placeholder="enter location" class="form-control" value="<%=listing.location%>" required>
                         <div class="valid-feedback">Looks Good!</div>
                         <div class="invalid-feedback">Please enter a valid location</div>
@@ -49,12 +49,12 @@
 
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                    <label for="country" class="form-label">Country</label>
+                    <label for="country" class="form-label"><i class="fa-solid fa-globe"></i> Country</label>
                     <input type="text" name="listing[country]" placeholder="enter country" class="form-control" required>
                     <div class="invalid-feedback">Please enter a valid country name</div>
                 </div>
                 <div class="mb-3 col-md-8">
-                    <label for="country" class="form-label">Choice Category</label>
+                    <label for="country" class="form-label"><i class="fa-solid fa-list"></i> Choice Category</label>
                     <select name="listing[category]" class="form-select new-Listing-Category">
                         <option value="">All Categories</option>
                         <option value="Trending">Trending</option>
