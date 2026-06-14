@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 const mongoose = require("mongoose");
 const port = 3000;
-// const MONGO_URL = "mongodb://127.0.0.1:27017/airbnb";
+// const MONGO_URL = "mongodb://127.0.0.1:27017/Your_Stay";
 
 const dbUrl = process.env.ATLASDB_URL;
 const path = require("path");

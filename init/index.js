@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config({path: "../.env"});
 const initData = require("./data.js");
-// const MONGO_URL = "mongodb://127.0.0.1:27017/airbnb";
+// const MONGO_URL = "mongodb://127.0.0.1:27017/Your_Stay";
 const url = process.env.ATLASDB_URL;
 const Listing = require("../models/listing.js");
 

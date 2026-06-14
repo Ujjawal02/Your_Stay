@@ -40,7 +40,7 @@ router.post("/login",
         failureFlash: true
     }), 
     async(req, res)=>{
-        req.flash("success","Welcome back on Airbnb, you are loggedIn");
+        req.flash("success","Welcome back on Your_Stay, you are loggedIn");
         // if(res.locals.redirectUrl){
         //     return res.redirect(res.locals.redirectUrl);
         // }

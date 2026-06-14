@@ -294,7 +294,7 @@ footer .row .col a {
 }
 
 footer .row .col a:hover {
-    color: #f2424d; /* Airbnb red hover */
+    color: #f2424d; /* Your_Stay red hover */
     text-decoration: underline;
 }
 
@@ -314,7 +314,7 @@ footer .div span {
     font-size: 0.85rem;
 }
 
-/* Support / Hosting / Airbnb lists */
+/* Support / Hosting / Your_Stay lists */
 footer ul {
     list-style-type: none; /* remove dots */
     padding: 0;

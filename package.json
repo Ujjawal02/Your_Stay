@@ -2,7 +2,7 @@
   "engines": {
     "node": "20.11.1"
   },
-  "name": "airbnb_project",
+  "name": "Your_Stay_project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
