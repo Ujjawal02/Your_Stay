@@ -15,6 +15,7 @@ const storage = new CloudinaryStorage({
     // public_id: (req, file) => 'computed-filename-using-request',
   },
 });
+
 module.exports = {
     cloudinary,
     storage
