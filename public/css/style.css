@@ -357,3 +357,9 @@ footer .col {
 .login-container, .signup-container, .new-container{
 min-height: calc(100vh - 5rem)
 }
+#map {
+    
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+}
